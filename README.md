@@ -11,4 +11,4 @@ node
 
 ### TODO
 
-Put the values into a XML
+Put the values into a csv file
