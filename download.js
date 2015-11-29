@@ -6,7 +6,6 @@ var exec = require('child_process').exec,
 var output = 'tmp/sitemap.xml';
 var parser = new xml2js.Parser();
 var src = 'http://media.continente.pt/sitemap.xml';
-var child;
 
 var extractValues = function (urls) {
     urls.forEach(function (url, index) {
