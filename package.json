@@ -1,0 +1,17 @@
+{
+  "name": "scrapper",
+  "version": "1.0.0",
+  "description": "continente.pt price extractor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexandre Pestana",
+  "license": "ISC",
+  "dependencies": {
+    "eyes": "^0.1.8",
+    "jsdom": "^7.1.0",
+    "wget": "0.0.1",
+    "xml2js": "^0.4.15"
+  }
+}
