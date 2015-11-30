@@ -2,24 +2,23 @@ var fs = require('fs'),
     jquery = fs.readFileSync('./jquery.js', 'utf-8'),
     jsdom = require('jsdom');
 
-var files = fs.readdirSync('tmp/');
-
-files = files.filter(function (file) {
+fs.readdirSync('tmp/').filter(function (file) {
     if (!file.match('.html'))
         return;
 
-    fs.readFile('tmp/' + file, 'utf8', function(error, html) {
+    fs.readFile('tmp/' + file, 'utf8', function (error, html) {
         jsdom.env({
-            html: html,
+            html,
             src: [jquery],
-            done: function (err, window) {
+            done: function (error, window) {
                 var $ = window.$;
                 var title = $('.productTitle').html();
+                if (!title)
+                    return;
                 var unitPrice = $('.pricePerUnit .updListPrice').html();
                 if (unitPrice)
                     unitPrice = unitPrice.replace('&nbsp;', '');
-                console.log('Title:', title);
-                console.log('Unit Price:', unitPrice);
+                console.log(title, '=>', unitPrice);
             }
         });
     });
